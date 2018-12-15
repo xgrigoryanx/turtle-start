@@ -1,0 +1,31 @@
+import turtle
+import random
+
+window = turtle.Screen()
+window.bgpic("images/background.png")
+window.setup(1200+3,800+3)
+
+
+
+
+def airplane(y):
+    pen = turtle.Turtle()
+    if y<0:
+        pen.color("green")
+    else:
+        pen.color("white")
+
+    pen.shape("circle")
+    for current_x in [-200,0,200]:
+        pen.penup()
+        pen.setpos(x=current_x, y=y)
+        pen.pendown()
+        pen.circle(radius=random.randint(30, 70))
+        pen.forward(100)
+
+
+airplane(y=100)
+airplane(y=-100)
+
+window.mainloop()
+
